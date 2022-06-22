@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/RateShopAPI/RateShopAPI/bin/Debug/net6.0
+/RateShopAPI/RateShopAPI/obj
+/RateShopAPI/RateShopAPI.Tests/bin/Debug/net6.0
+/RateShopAPI/RateShopAPI.Tests/obj
+/RateShopAPI/.vs
