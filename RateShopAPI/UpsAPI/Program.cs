@@ -1,5 +1,10 @@
-using RateShopAPI.BusinessLogic;
-using RateShopAPI.BusinessLogic.Interfaces;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using UpsAPI;
+using UpsAPI.Models.Db;
+using UpsAPI.Repositories;
+using UpsAPI.Repositories.Interfaces;
+using UpsAPI.Utils;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,8 +15,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IRateShop, RateShop>();
-builder.Services.AddScoped<IRateShopProvider, RateShopProvider>();
+builder.Services.AddDbContext<RatesDBContext>(options => options.UseInMemoryDatabase("UPSDatabase"));
+builder.Services.AddScoped<IRatesRepository, RatesRepository>();
 
 
 var app = builder.Build();
@@ -25,8 +30,11 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+RatesSeedData.EnsurePopulated(app);
 
 app.Run();

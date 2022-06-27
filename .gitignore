@@ -7,3 +7,7 @@
 /RateShopAPI/RateShopAPI.Tests/bin/Debug/net6.0
 /RateShopAPI/RateShopAPI.Tests/obj
 /RateShopAPI/.vs
+/RateShopAPI/FedexAPI/bin/Debug/net6.0
+/RateShopAPI/UpsAPI/bin/Debug/net6.0
+/RateShopAPI/UpsAPI/obj
+/RateShopAPI/FedexAPI/obj

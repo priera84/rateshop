@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateShopAPI", "RateShopAPI\RateShopAPI.csproj", "{343DBA7B-6230-4281-96D3-EBE13F8F456A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateShopAPI", "RateShopAPI\RateShopAPI.csproj", "{343DBA7B-6230-4281-96D3-EBE13F8F456A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RateShopAPI.Tests", "RateShopAPI.Tests\RateShopAPI.Tests.csproj", "{AEC78125-F58F-4EC7-B4D6-C4DDAE57706B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RateShopAPI.Tests", "RateShopAPI.Tests\RateShopAPI.Tests.csproj", "{AEC78125-F58F-4EC7-B4D6-C4DDAE57706B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpsAPI", "UpsAPI\UpsAPI.csproj", "{D8BAB390-18DD-443A-8220-4895E5C38F43}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FedexAPI", "FedexAPI\FedexAPI.csproj", "{EE6EEEA9-E25C-4F2B-BE83-33C48272FA06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{AEC78125-F58F-4EC7-B4D6-C4DDAE57706B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AEC78125-F58F-4EC7-B4D6-C4DDAE57706B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AEC78125-F58F-4EC7-B4D6-C4DDAE57706B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8BAB390-18DD-443A-8220-4895E5C38F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8BAB390-18DD-443A-8220-4895E5C38F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8BAB390-18DD-443A-8220-4895E5C38F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8BAB390-18DD-443A-8220-4895E5C38F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE6EEEA9-E25C-4F2B-BE83-33C48272FA06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE6EEEA9-E25C-4F2B-BE83-33C48272FA06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE6EEEA9-E25C-4F2B-BE83-33C48272FA06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE6EEEA9-E25C-4F2B-BE83-33C48272FA06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KlYxSNiQOM1uYM5faakGx+uQqoFHbXJVJzMuxotLw+SO2dIB5o++ai8BEojhPwrK2EsILgYPuUm0ETDkfjK+Hw==",
+  "dgSpecHash": "wgVHcoWbWc7DftTIYVPc6ZAKVjKWR0yKmqC1t89NMmpwOQitnTyAbJdwbZS3aEI0PU53uw1bQ8cVtT3PUsxWRA==",
   "success": true,
   "projectFilePath": "D:\\PersonalProjects\\rateshop\\RateShopAPI\\RateShopAPI\\RateShopAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\Peter\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\Peter\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
