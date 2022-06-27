@@ -11,7 +11,15 @@ namespace RateShopAPI.BusinessLogic
         {
             _rateShopProvider = rateShopProvider;
         }
-       
+
+        public async Task<List<Rate>> GetAllRates(Shipment shipment, List<Rate> rates)
+        {
+            if (!rates.Any())
+                rates = await _rateShopProvider.GetRatesFromCarriers(shipment);
+
+            return rates;
+        }
+
         /// <summary>
         /// Returns the cheapest rates from the list of rates. 
         /// </summary>
@@ -21,7 +29,7 @@ namespace RateShopAPI.BusinessLogic
         public async Task<Rate?> GetCheapestRate(Shipment shipment, List<Rate> rates)
         {
             if (!rates.Any())
-                rates = await _rateShopProvider.GetRatesFromCarriers(shipment); 
+                rates = await _rateShopProvider.GetRatesFromCarriers(shipment);
 
             if (rates.Any())
             {

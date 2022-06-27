@@ -22,7 +22,7 @@ namespace RateShopAPI.Controllers
         /// <param name="rateShopRequest">Object of type<paramref name="rateShopRequest"/></param>
         /// <returns>The cheapest rate from rate shop.</returns>
         [HttpPost("cheapestrate")]
-        public async Task<RateShopResponse?> GetCheapestRate([FromBody] RateShopRequest rateShopRequest)
+        public async Task<IActionResult> GetCheapestRate([FromBody] RateShopRequest rateShopRequest)
         {
             Shipment shipment = rateShopRequest.ToShipment();
 
@@ -34,10 +34,34 @@ namespace RateShopAPI.Controllers
             {
                 var response = cheapestRate.ToRateShopResponse();
 
-                return response;
+                return new OkObjectResult(response);
             }
             else
-                return null;
+                return NoContent();
+        }
+
+          /// <summary>
+        /// Returns the cheapest rate from rate shop.
+        /// </summary>
+        /// <param name="rateShopRequest">Object of type<paramref name="rateShopRequest"/></param>
+        /// <returns>The cheapest rate from rate shop.</returns>
+        [HttpPost("allrates")]
+        public async Task<IActionResult> GetAllRates([FromBody] RateShopRequest rateShopRequest)
+        {
+            Shipment shipment = rateShopRequest.ToShipment();
+
+            List<Rate> rates = new List<Rate>();
+
+            rates = await rateShop.GetAllRates(shipment, rates);
+
+            if (rates.Any())
+            {
+                var response = rates.Select(x => x.ToRateShopResponse()).ToList();
+
+                return new OkObjectResult(response);
+            }
+            else
+                return NoContent();
         }
 
  

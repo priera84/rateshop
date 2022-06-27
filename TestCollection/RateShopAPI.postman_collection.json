@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "74a43fbf-ce8e-4b6e-b720-f1060ae448a5",
+		"name": "RateShopAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Cheapest Rate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"contactAddress\": {\r\n    \"street\": \"pingui 42\",\r\n    \"city\": \"Palma\",\r\n    \"postalCode\": \"07610\",\r\n    \"stateCode\": \"IB\",\r\n    \"countryCode\": \"CA\"\r\n  },\r\n  \"warehouseAddress\": {\r\n    \"street\": \"1ST AV.\",\r\n    \"city\": \"New York\",\r\n    \"postalCode\": \"10033\",\r\n    \"stateCode\": \"NY\",\r\n    \"countryCode\": \"US\"\r\n  },\r\n  \"packageDimensions\": [\r\n    {\r\n      \"length\": 10,\r\n      \"width\": 10,\r\n      \"height\": 10,\r\n      \"dimensionsUnitOfMeasure\": \"CM\",\r\n      \"weight\": 1,\r\n      \"weightUnitOfMeasure\": \"KG\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7249/RateShop/cheapestrate",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7249",
+					"path": [
+						"RateShop",
+						"cheapestrate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Rate Shop rates",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"contactAddress\": {\r\n    \"street\": \"pingui 42\",\r\n    \"city\": \"Palma\",\r\n    \"postalCode\": \"07610\",\r\n    \"stateCode\": \"IB\",\r\n    \"countryCode\": \"CA\"\r\n  },\r\n  \"warehouseAddress\": {\r\n    \"street\": \"1ST AV.\",\r\n    \"city\": \"New York\",\r\n    \"postalCode\": \"10033\",\r\n    \"stateCode\": \"NY\",\r\n    \"countryCode\": \"US\"\r\n  },\r\n  \"packageDimensions\": [\r\n    {\r\n      \"length\": 10,\r\n      \"width\": 10,\r\n      \"height\": 10,\r\n      \"dimensionsUnitOfMeasure\": \"CM\",\r\n      \"weight\": 1,\r\n      \"weightUnitOfMeasure\": \"KG\"\r\n    }\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:7249/RateShop/allrates",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "7249",
+					"path": [
+						"RateShop",
+						"allrates"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

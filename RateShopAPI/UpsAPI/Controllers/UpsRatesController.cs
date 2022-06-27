@@ -30,8 +30,6 @@ namespace UpsAPI.Controllers
         [ProducesResponseType(typeof(NoContentResult), 204)]
         public async Task<IActionResult> GetUpsRates([FromBody] UpsRatesRequest upsRatesRequest)
         {
-            Thread.Sleep(2000);
-
             var rates = await _ratesRepository.GetRatesAsync("UPS", upsRatesRequest.AsShipment());
 
             if (!rates.Any())

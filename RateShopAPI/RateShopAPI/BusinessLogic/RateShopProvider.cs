@@ -29,7 +29,8 @@ namespace RateShopAPI.BusinessLogic
             List<Rate> result = new();
 
             foreach (var rate in rates)
-                result.AddRange(rate);
+                if (rate != null && rate.Any())
+                    result.AddRange(rate);
 
             return result;
 
