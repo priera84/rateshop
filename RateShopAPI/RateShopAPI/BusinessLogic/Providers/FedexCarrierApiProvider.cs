@@ -11,10 +11,12 @@ namespace RateShopAPI.BusinessLogic.Providers
     {
         private FedexRatesRequest? _fedexRateRequest;
         private IConfiguration _configuration;
+        private readonly IHttpClientFactory _httpClientFactory;
 
-        public FedexCarrierApiProvider(IConfiguration configuration)
+        public FedexCarrierApiProvider(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
-            this._configuration = configuration;
+            _configuration = configuration;
+            _httpClientFactory = httpClientFactory;
         }
 
         public void CreateRequest(Shipment shipment)
@@ -80,7 +82,7 @@ namespace RateShopAPI.BusinessLogic.Providers
 
         public async Task<HttpResponseMessage> SendRequestAsync()
         {
-            HttpClient httpClient = new HttpClient();
+            HttpClient httpClient = _httpClientFactory.CreateClient("FedexAPIClient");
 
             httpClient.BaseAddress = new Uri(_configuration["FedexAPIUrl"]);      
 
