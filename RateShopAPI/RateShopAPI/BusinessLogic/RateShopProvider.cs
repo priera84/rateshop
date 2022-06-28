@@ -9,10 +9,10 @@ namespace RateShopAPI.BusinessLogic
         private List<ICarrierApiProvider> _carrierApiProviders = new();
 
 
-        public RateShopProvider()
+        public RateShopProvider(IConfiguration configuration)
         {
-            RegisterCarrierApiProvider(new UpsCarrierApiProvider());
-            RegisterCarrierApiProvider(new FedexCarrierApiProvider());
+            RegisterCarrierApiProvider(new UpsCarrierApiProvider(configuration));
+            RegisterCarrierApiProvider(new FedexCarrierApiProvider(configuration));
         }
 
         private void RegisterCarrierApiProvider(ICarrierApiProvider carrierApiProvider)

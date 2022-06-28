@@ -10,6 +10,13 @@ namespace RateShopAPI.BusinessLogic.Providers
     public class FedexCarrierApiProvider : ICarrierApiProvider
     {
         private FedexRatesRequest? _fedexRateRequest;
+        private IConfiguration _configuration;
+
+        public FedexCarrierApiProvider(IConfiguration configuration)
+        {
+            this._configuration = configuration;
+        }
+
         public void CreateRequest(Shipment shipment)
         {
             _fedexRateRequest = shipment.AsFedexRatesRequest();
@@ -75,7 +82,7 @@ namespace RateShopAPI.BusinessLogic.Providers
         {
             HttpClient httpClient = new HttpClient();
 
-            httpClient.BaseAddress = new Uri("https://localhost:7004");      
+            httpClient.BaseAddress = new Uri(_configuration["FedexAPIUrl"]);      
 
             var requestBody = _fedexRateRequest.GenerateBodyContent();
 
@@ -85,7 +92,7 @@ namespace RateShopAPI.BusinessLogic.Providers
 
             try
             {
-                var response = await httpClient.PostAsync("api/FedexRates", content);
+                var response = await httpClient.PostAsync(_configuration["FedexAPIEndpoint"], content);
 
                 return response;
             }

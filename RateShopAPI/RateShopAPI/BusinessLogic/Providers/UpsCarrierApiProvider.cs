@@ -9,7 +9,14 @@ namespace RateShopAPI.BusinessLogic.Providers
 {
     public class UpsCarrierApiProvider : ICarrierApiProvider
     {
+        private readonly IConfiguration _configuration;
         private UpsRatesRequest? _upsRatesRequest;
+
+        public UpsCarrierApiProvider(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+
         public void CreateRequest(Shipment shipment)
         {
             _upsRatesRequest = shipment.AsUpsRatesRequest();
@@ -48,7 +55,7 @@ namespace RateShopAPI.BusinessLogic.Providers
         {
             HttpClient httpClient = new HttpClient();
 
-            httpClient.BaseAddress = new Uri("https://localhost:7121");
+            httpClient.BaseAddress = new Uri(_configuration["UpsAPIUrl"]);
          
             string requestBody = _upsRatesRequest.GenerateBodyContent();
 
@@ -60,7 +67,7 @@ namespace RateShopAPI.BusinessLogic.Providers
             {
                 //ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls12;
 
-                var response = await httpClient.PostAsync("api/UpsRates", content);
+                var response = await httpClient.PostAsync(_configuration["UpsAPIEndpoint"], content);
 
                 return response;
             }
