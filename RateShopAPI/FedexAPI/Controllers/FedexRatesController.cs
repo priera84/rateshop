@@ -9,12 +9,10 @@ namespace FedexAPI.Controllers
     [Route("api/[controller]")]    
     public class FedexRatesController : ControllerBase
     {
-        private readonly ILogger<FedexRatesController> _logger;
         private readonly IRatesRepository _ratesRepository;
 
-        public FedexRatesController(ILogger<FedexRatesController> logger, IRatesRepository ratesRepository)
+        public FedexRatesController(IRatesRepository ratesRepository)
         {
-            _logger = logger;
             _ratesRepository = ratesRepository;
         }
 

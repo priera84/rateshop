@@ -11,12 +11,10 @@ namespace UpsAPI.Controllers
     [Route("api/[controller]")]
     public class UpsRatesController : ControllerBase
     {
-        private readonly ILogger<UpsRatesController> _logger;
         private readonly IRatesRepository _ratesRepository;
 
-        public UpsRatesController(ILogger<UpsRatesController> logger, IRatesRepository ratesRepository)
+        public UpsRatesController(IRatesRepository ratesRepository)
         {
-            _logger = logger;
             _ratesRepository = ratesRepository;
         }
 
