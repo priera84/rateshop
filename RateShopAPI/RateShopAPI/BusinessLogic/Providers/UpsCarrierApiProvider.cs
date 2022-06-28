@@ -10,11 +10,13 @@ namespace RateShopAPI.BusinessLogic.Providers
     public class UpsCarrierApiProvider : ICarrierApiProvider
     {
         private readonly IConfiguration _configuration;
+        private readonly IHttpClientFactory _httpClientFactory;
         private UpsRatesRequest? _upsRatesRequest;
 
-        public UpsCarrierApiProvider(IConfiguration configuration)
+        public UpsCarrierApiProvider(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _configuration = configuration;
+            _httpClientFactory = httpClientFactory;
         }
 
         public void CreateRequest(Shipment shipment)
@@ -53,7 +55,7 @@ namespace RateShopAPI.BusinessLogic.Providers
 
         public async Task<HttpResponseMessage> SendRequestAsync()
         {
-            HttpClient httpClient = new HttpClient();
+            HttpClient httpClient = _httpClientFactory.CreateClient();
 
             httpClient.BaseAddress = new Uri(_configuration["UpsAPIUrl"]);
          
