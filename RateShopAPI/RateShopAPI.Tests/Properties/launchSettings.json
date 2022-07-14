@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RateShopAPI.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
